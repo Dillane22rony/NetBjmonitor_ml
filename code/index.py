@@ -203,12 +203,12 @@ dates = [datetime.strptime(date, '%d %b %Y').date() for date in dataF_dec_2021['
 
 # sacked & totalretrans
 # download
-# sacked = dataF_dec_2021['Maximum Sacked']
+sacked = dataF_dec_2021['Maximum Sacked']
 # totalretrans = dataF_dec_2021['Maximum TotalRetrans']
 # plt.plot(dates, sacked, label="Sacked")
 # plt.plot(dates, totalretrans, label="TotalRetrans")
 # plt.legend()
-plt.show()
+# plt.show()
 # upload
 # sacked = dataF_dec_2021['Maximum Sacked_up']
 # totalretrans = dataF_dec_2021['Maximum TotalRetrans_up']
@@ -240,10 +240,34 @@ plt.show()
 # plt.plot(dates, minrtt, label="latence upload")
 # plt.legend()
 # plt.show()
+lost = dataF_dec_2021['Maximum Lost']
+lost_up = dataF_dec_2021['Maximum Lost_up']
+sacked_up = dataF_dec_2021['Maximum Sacked_up']
+bytesRetrans = dataF_dec_2021['Maximum BytesRetrans']
+bytesRetrans_up = dataF_dec_2021['Maximum BytesRetrans_up']
+plt.plot(dates, lost, label="Quantité de segments perdus")
+plt.legend()
+plt.show()
+plt.plot(dates, sacked, label="Quantité de segments marquées 'Sacked'")
+
+plt.plot(dates, bytesRetrans, label="Quantité de données retransmises")
+plt.legend()
+plt.show()
+
+#up
+plt.plot(dates, lost_up, label="Quantité de segments perdus Upload")
+plt.legend()
+plt.show()
+plt.plot(dates, sacked_up,label="Quantité de segments marquées 'Sacked' upload")
+
+
+plt.plot(dates, bytesRetrans_up, label="Quantité de données retransmises Upload")
+plt.legend()
+plt.show()
+
 """
     Les visualisations des paramêtres seront faites avec les applications de visualisation de graphes
     Power Bi et Grafana. 
 """
 
 #
-# print(dataF['category'])
